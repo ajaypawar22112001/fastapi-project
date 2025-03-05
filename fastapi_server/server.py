@@ -4,7 +4,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .config import Environment, get_settings
-from .routers import auth_router, csc_router, user_router
 
 
 # Context manager that will run before the server starts and after the server stops
@@ -52,8 +51,3 @@ elif app_settings.ENVIRONMENT == Environment.DEVELOPMENT.value:
 @app.get("/")
 async def index():
     return {"message": "FastAPI Server API"}
-
-
-# app.include_router(auth_router)
-# app.include_router(user_router)
-# app.include_router(csc_router)

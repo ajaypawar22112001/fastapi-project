@@ -11,7 +11,7 @@ createMigration:
 	poetry run alembic revision --autogenerate -m "new migration"
 
 runLocal:
-	source .env.local && \
+	source .env && \
 	poetry run uvicorn fastapi_server.server:app --port 1140 --reload --host 0.0.0.0
 
 runBuildDocker:
